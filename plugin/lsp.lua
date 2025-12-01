@@ -32,7 +32,7 @@ require('mason-lspconfig').setup({
         "lua_ls",
         "omnisharp",
         "tailwindcss",
-        "gopls",
+        -- "gopls",
     },
     handlers = {
         lsp_zero.default_setup,
