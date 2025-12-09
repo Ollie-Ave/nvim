@@ -1,4 +1,4 @@
-require("oliver.remap")
-require("oliver.packer")
+require("oliver.lazy")
+require("oliver.colours")
 require("oliver.set")
-require("oliver.ignore")
+require("oliver.remap")

@@ -2,11 +2,11 @@ require("transparent").setup({ -- Optional, you don't have to run setup.
   groups = {
 	  'Normal',
 	  'NormalNC',
-	  'NormalFloat',
+	  -- 'NormalFloat',
 	  'SignColumn',
 	  'EndOfBuffer',
 	  'MsgArea',
-	  'FloatBorder',
+	  --'FloatBorder',
 	  'Pmenu',
 	  'PmenuSel',
 	  'PmenuSbar',
@@ -19,7 +19,7 @@ require("transparent").setup({ -- Optional, you don't have to run setup.
   },
 
   extra_groups = {
-	  'NormalFloat',
+	  --'NormalFloat',
 	  'NvimTreeNormal',
 	  'TelescopeNormal',
 	  'TelescopeBorder',
@@ -34,3 +34,7 @@ require("transparent").setup({ -- Optional, you don't have to run setup.
 })
 
 vim.cmd[[hi NvimTreeNormal guibg=NONE ctermbg=NONE]]
+
+return {
+    "xiyaowong/transparent.nvim"
+}
