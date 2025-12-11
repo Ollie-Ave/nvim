@@ -1,15 +1,15 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<C-s>", function()
-    vim.lsp.buf.format()
-    vim.cmd("w")
+	vim.lsp.buf.format()
+	vim.cmd("w")
 end)
 vim.keymap.set("i", "<C-s>", function()
-    vim.lsp.buf.format()
-    vim.cmd("w")
+	vim.lsp.buf.format()
+	vim.cmd("w")
 end)
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true })
 vim.api.nvim_set_keymap("n", "<C-m>", ":NvimTreeCollapse<CR>", { silent = true })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
@@ -36,3 +36,5 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<C-r>r", "Telescope projects")
 
 vim.keymap.set("n", "<leader>q", ":q!<CR>", { silent = true })
+
+vim.keymap.set("n", "<leader>de", ":DotnetErrors<CR>", { silent = true })

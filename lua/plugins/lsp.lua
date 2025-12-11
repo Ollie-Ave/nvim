@@ -83,6 +83,7 @@ return {
 				["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 				["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
 				["<Enter>"] = cmp.mapping.confirm({ select = true }),
+				["<tab>"] = cmp.mapping.confirm({ select = true }),
 				["<C-l>"] = cmp.mapping(function()
 					cmp.complete()
 				end),
