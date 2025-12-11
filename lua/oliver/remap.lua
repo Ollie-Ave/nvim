@@ -1,13 +1,19 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<C-s>", vim.cmd.w)
-vim.keymap.set("i", "<C-s>", vim.cmd.w)
+vim.keymap.set("n", "<C-s>", function()
+    vim.lsp.buf.format()
+    vim.cmd("w")
+end)
+vim.keymap.set("i", "<C-s>", function()
+    vim.lsp.buf.format()
+    vim.cmd("w")
+end)
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { silent = true })
 vim.api.nvim_set_keymap("n", "<C-m>", ":NvimTreeCollapse<CR>", { silent = true })
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")

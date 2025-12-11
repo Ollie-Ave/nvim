@@ -9,6 +9,15 @@ return {
     { import = "plugins.lazygit" },
 
     {
+        "seblyng/roslyn.nvim",
+        ---@module 'roslyn.config'
+        ---@type RoslynNvimConfig
+        opts = {
+            silent = true
+        }
+    },
+
+    {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         event = { "BufReadPost", "BufNewFile" },
@@ -17,7 +26,7 @@ return {
     {
         "windwp/nvim-autopairs",
         config = function()
-            require("nvim-autopairs").setup{}
+            require("nvim-autopairs").setup {}
         end,
     },
 
