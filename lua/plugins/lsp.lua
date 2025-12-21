@@ -1,10 +1,3 @@
-require("mason").setup({
-	registries = {
-		"github:mason-org/mason-registry",
-		"github:Crashdummyy/mason-registry",
-	},
-})
-
 local configure_keybindings = function()
 	local remap_opts = { buffer = bufnr, remap = false }
 
@@ -59,6 +52,13 @@ return {
 		},
 	},
 	config = function(_, opts)
+        require("mason").setup({
+            registries = {
+                "github:mason-org/mason-registry",
+                "github:Crashdummyy/mason-registry",
+            },
+         })
+
 		require("mason-lspconfig").setup(opts)
 
 		vim.diagnostic.config({
