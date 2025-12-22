@@ -36,6 +36,9 @@ local configure_keybindings = function()
 	vim.keymap.set("i", "<C-l>", function()
 		require("cmp").mapping.complete()
 	end)
+	vim.keymap.set("i", "<C-@>", function()
+		require("cmp").mapping.complete()
+	end)
 end
 
 return {
@@ -52,12 +55,12 @@ return {
 		},
 	},
 	config = function(_, opts)
-        require("mason").setup({
-            registries = {
-                "github:mason-org/mason-registry",
-                "github:Crashdummyy/mason-registry",
-            },
-         })
+		require("mason").setup({
+			registries = {
+				"github:mason-org/mason-registry",
+				"github:Crashdummyy/mason-registry",
+			},
+		})
 
 		require("mason-lspconfig").setup(opts)
 
