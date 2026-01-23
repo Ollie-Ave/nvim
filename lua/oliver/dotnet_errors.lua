@@ -10,7 +10,7 @@ local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
 
 local function get_dotnet_errors()
-	local handle = io.popen("dotnet build -v q") -- quiet build output
+	local handle = io.popen("dotnet build -v q --no-restore /p:Deterministic=false -m:12") -- quiet build output
 	if not handle then
 		return {}
 	end

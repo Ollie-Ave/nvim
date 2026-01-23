@@ -20,9 +20,6 @@ return {
 			update_focused_file = {
 				enable = true,
 			},
-			view = {
-				width = 60,
-			},
 			renderer = {
 				group_empty = true,
 			},
@@ -32,9 +29,19 @@ return {
 			actions = {
 				open_file = {
 					quit_on_open = true,
+					window_picker = {
+						enable = false,
+					},
 				},
 			},
+			update_focused_file = {
+				enable = true,
+				update_root = false,
+			},
+			view = {
+				preserve_window_proportions = true,
+				width = 60,
+			},
 		})
-
 	end,
 }

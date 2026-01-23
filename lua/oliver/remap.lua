@@ -1,7 +1,18 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<C-s>", function()
-	vim.lsp.buf.format()
+	local eslint = false
+	for _, c in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+		if c.name == "eslint" then
+			eslint = true
+			break
+		end
+	end
+	(eslint and vim.lsp.buf.code_action or vim.lsp.buf.format)({
+		apply = eslint and true or nil,
+		context = eslint and { only = { "source.fixAll.eslint" }, diagnostics = {} } or nil,
+		async = eslint and nil or false,
+	})
 	vim.cmd("w")
 end)
 vim.keymap.set("i", "<C-s>", function()
@@ -35,6 +46,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "<C-r>r", "Telescope projects")
 
-vim.keymap.set("n", "<leader>q", ":q!<CR>", { silent = true })
+vim.keymap.set("n", "<leader>q", ":q<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>de", ":DotnetErrors<CR>", { silent = true })
+vim.keymap.set("n", "<leader>d", ":DotnetErrors<CR>", { silent = true })

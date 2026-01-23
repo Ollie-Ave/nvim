@@ -106,6 +106,7 @@ return {
 				},
 			},
 		})
+
 		vim.lsp.config("vue_ls", {
 			init_options = {
 				plugins = {
@@ -127,6 +128,13 @@ return {
 						globals = { "vim" },
 					},
 				},
+			},
+		})
+
+		vim.lsp.config("eslint", {
+			settings = {
+				experimental = { useFlatConfig = true },
+				workingDirectory = { mode = "location" },
 			},
 		})
 	end,
