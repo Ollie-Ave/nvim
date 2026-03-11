@@ -9,6 +9,8 @@ return {
 	{ import = "plugins.lazygit" },
 	{ import = "plugins.blame" },
 
+	{ "github/copilot.vim" },
+
 	{
 		"seblyng/roslyn.nvim",
 		---@module 'roslyn.config'
@@ -35,8 +37,9 @@ return {
 		"ahmedkhalf/project.nvim",
 		config = function()
 			require("project_nvim").setup({
+				manual_mode = true,
 				detection_methods = { "pattern", "lsp" },
-				patterns = { ".git", "Makefile", "package.json" },
+				patterns = { "*.sln", ".git", "Makefile", "pnpm-workspace.yaml", "package.json" },
 				show_hidden = true,
 			})
 		end,
