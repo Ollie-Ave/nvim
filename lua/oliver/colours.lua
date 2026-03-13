@@ -1,5 +1,5 @@
 function RemoveBackground(colour)
-	colour = colour or 'catppuccin'
+	colour = colour or 'catppuccin-nvim'
 
 	vim.cmd.colorscheme(colour)
 
